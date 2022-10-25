@@ -1,5 +1,5 @@
 import * as BookList from '../model/booklist_model.mjs' // version 3 with ORM sequelize, postgress
-
+import * as BookController from './usercontroller.mjs'
 const doLogin = async (req, res, next) => {
 
     //έλεγχος εγκυρότητας οκ
@@ -7,7 +7,7 @@ const doLogin = async (req, res, next) => {
     if (user) {
         req.session.username = req.body.username // το username μπαίνει σαν μεταβλητή συνεδρίας
         res.locals.username = req.session.username //τα μέλη του res.locals είναι απευθείας προσβάσιμα στο template
-        next() //το επόμενο middleware είναι το showBooklist
+        BookController.showBookList //το επόμενο middleware είναι το showBooklist
     }
     else {
         throw new Error("άγνωστο σφάλμα")
