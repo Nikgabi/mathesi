@@ -1,18 +1,20 @@
-import { Sequelize, DataTypes } from 'sequelize'
+import { Sequelize } from 'sequelize';
 
 const sequelize = new Sequelize(
-    process.env.DATABASE_URL,
     {
+        host: 'dpg-cdcrc5un6mpsbhf4dni0-a',
+        url: process.env.DATABASE_URL ,
+        port: 5432,
+        database: 'booklist',
+        schema: 'booklist',
         dialect: 'postgres',
-        dialectOptions: {
-            ssl: {
-                require: true,
-                rejectUnauthorized: false
-            }
-        },
+        username: 'booklist_user',
+        password: 'hpnIzyf1hQUwdQqlG9ZGt6rZIAImGQ9C',
         logging: false,
         define: {
-            timestamps: false
-        }})
+            timestamps: false,
+            freezeTableName: true
+        }
+    });
 
 export default sequelize

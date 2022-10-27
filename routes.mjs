@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
         res.render("home")
 })
 
-router.get("/books", UserController.checkIfAuthenticated, BookController.showBookList)
+//router.get("/books", UserController.checkIfAuthenticated, BookController.showBookList)
 
 //έλεγξε αν έχει συνδεθεί ο χρήστης, μετά δείξε τα βιβλία
 router.get("/books", UserController.checkIfAuthenticated, BookController.showBookList)

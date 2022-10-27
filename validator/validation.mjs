@@ -65,15 +65,15 @@ const validateNewUser = [
     body("username")
     .trim().escape().isLength({ min: 4 }) // Θα μπορούσαμε να έχουμε και άλλους ελέγχους
     .withMessage("Δώστε όνομα με τουλάχιστον 4 χαρακτήρες"),
-body("password-confirm")
-    .trim()
-    .isLength({ min: 4, max: 10 })
-    .withMessage('Το συνθηματικό πρέπει να έχει από 4 μέχρι 10 χαρακτήρες')
-    .custom((value, { req }) => {
-        if (value != req.body.password)
-            throw new Error("Το συνθηματικό πρέπει να είναι το ίδιο και στα δύο πεδία")
-        else
-            return true
+    body("password-confirm")
+        .trim()
+        .isLength({ min: 4, max: 10 })
+        .withMessage('Το συνθηματικό πρέπει να έχει από 4 μέχρι 10 χαρακτήρες')
+        .custom((value, { req }) => {
+            if (value != req.body.password)
+                throw new Error("Το συνθηματικό πρέπει να είναι το ίδιο και στα δύο πεδία")
+            else
+                return true
     }), 
     (req, res, next) => {
         const errors = validationResult(req)

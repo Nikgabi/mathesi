@@ -1,5 +1,5 @@
 import * as BookList from '../model/booklist_model.mjs' // version 3 with ORM sequelize, postgress
-import * as BookController from './usercontroller.mjs'
+import * as BookController from './user_controller.mjs'
 const doLogin = async (req, res, next) => {
 
     //έλεγχος εγκυρότητας οκ
