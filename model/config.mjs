@@ -5,7 +5,7 @@ const sequelize = new Sequelize(
         host: 'dpg-cdcrc5un6mpsbhf4dni0-a',
         url: process.env.DATABASE_URL ,
         port: 5432,
-        database: 'booklist',
+        database: 'postgres',
         schema: 'booklist',
         dialect: 'postgres',
         username: 'booklist_user',
