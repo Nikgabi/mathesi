@@ -42,7 +42,8 @@ function checkIfAuthenticated(req, res, next) {
         next() //επόμενο middleware
     }
     else
-        res.redirect("/") //αλλιώς ανακατεύθυνση στην αρχική σελίδα
+        //res.redirect("/") //αλλιώς ανακατεύθυνση στην αρχική σελίδα
+        next()
 }
 
 export { checkIfAuthenticated, doLogin, doRegister, doLogout }
