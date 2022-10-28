@@ -30,10 +30,10 @@ app.set('view engine', 'hbs')
 app.use("/", router)
 
 //οτιδήποτε άλλο θα ανακατευθύνεται στο "/"
-app.use((req, res) => {
-    res.redirect('/')
-}
-);
+//app.use((req, res) => {
+//    res.redirect('/')
+//}
+//);
 
 app.use((err, req, res, next) => {
     console.log("error occured: " + err.message)
